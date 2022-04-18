@@ -1,3 +1,4 @@
+using admCondominio.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +11,8 @@ namespace admCondominio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddHttpClient();
+            services.AddDbContext<AppDbContext>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
